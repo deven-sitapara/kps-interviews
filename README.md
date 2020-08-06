@@ -97,25 +97,32 @@ To getting started with the plugin, please read the [Quick Start Guide](https://
 == Screenshots ==
 
 1. Plugin page
-   ![Alt text](screenshots/plugin-page.png)
+
+![Alt text](screenshots/plugin-page.png)
 
 2. List Candidates
-   ![Alt text](screenshots/list-candidates.png)
+
+![Alt text](screenshots/list-candidates.png)
 
 3. Add Candidate
-   ![Alt text](screenshots/add-candidate.png)
+
+![Alt text](screenshots/add-candidate.png)
 
 4. CSV Sample
-   ![Alt text](screenshots/csv-sample.png)
+
+![Alt text](screenshots/csv-sample.png)
 
 5. Import Step1
-   ![Alt text](screenshots/import-step1.png)
+
+![Alt text](screenshots/import-step1.png)
 
 6. Import Step2
-   ![Alt text](screenshots/import-step2.png)
+
+![Alt text](screenshots/import-step2.png)
 
 7. Import Step3
-   ![Alt text](screenshots/import-step3.png)
+
+![Alt text](screenshots/import-step3.png)
 
 == Changelog ==
 
