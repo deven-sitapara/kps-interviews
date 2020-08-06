@@ -77,6 +77,10 @@ To getting started with the plugin, please read the [Quick Start Guide](https://
 
 == Frequently Asked Questions ==
 
+1. How to install ? 
+Please check bellow screenshots.
+
+
 == Screenshots ==
 
 1. Plugin page 
@@ -108,3 +112,9 @@ To getting started with the plugin, please read the [Quick Start Guide](https://
 - KPS Plugin can Add Candidate First Name, Last Name, Email, Gender , Hobbies
 
 - Can Bulk Import.
+
+
+
+== Upgrade Notice == 
+
+Since version 5.0.0, the plugin requires PHP >= 5.3. If you use an older PHP version, please ask your host to upgrade or use an older version of KPS Interview.
