@@ -45,7 +45,10 @@ Most importantly, plugin should follow all WordPress coding standards,  and it s
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+1. Install plugin 
+2. Install Dependencies 
+3. Add Candidates 
+4. Sample csv is given in plugin folder 
 
 e.g.
 
