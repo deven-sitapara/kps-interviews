@@ -125,6 +125,12 @@ class Kps_Interviews
 		require_once plugin_dir_path(dirname(__FILE__)) . 'public/class-kps-interviews-public.php';
 
 		/**
+		 * The class responsible for defining all display functions that occur in the public-facing
+		 * side of the site.
+		 */
+		require_once plugin_dir_path(dirname(__FILE__)) . 'public/partials/kps-interviews-public-display.php';
+
+		/**
 		 * The class responsible for installing dependancies plugin required 
 		 */
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-tgm-plugin-activation.php';
@@ -182,6 +188,11 @@ class Kps_Interviews
 
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts');
+
+
+		$fn_the_interview_form_response = 'the_interview_form_response';
+		$this->loader->add_action('wp_ajax_nopriv_'  . $fn_the_interview_form_response, $plugin_public, $fn_the_interview_form_response);
+		$this->loader->add_action('wp_ajax_' . $fn_the_interview_form_response, $plugin_public, $fn_the_interview_form_response);
 	}
 
 	/**

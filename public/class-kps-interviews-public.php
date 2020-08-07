@@ -98,6 +98,63 @@ class Kps_Interviews_Public {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/kps-interviews-public.js', array( 'jquery' ), $this->version, false );
 
+		wp_localize_script($this->plugin_name, 'interview', array(
+			'ajax_url' => admin_url('admin-ajax.php'),
+			'nonce'    => wp_create_nonce('interview')
+		));
 	}
 
+	/**
+	 * Interview form post action 
+	 */
+	public function the_interview_form_response()
+	{
+
+
+
+		// Check the nonce for permission.
+		if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], $this->plugin['id'])) {
+			die('Permission Denied');
+		}
+
+		// Get the request data.
+		$request = array(
+			'example' => isset($_REQUEST['example']) ? $_REQUEST['example'] : 'default'
+		);
+
+		// Define an empty response array.
+		$response = array(
+			'content' => print_r($_POST, true)
+		);
+
+		// Terminate the callback and return a proper response.
+		//wp_die(json_encode(print_r($_POST, true)));
+		wp_die(json_encode($response));
+
+
+
+		if (isset($_POST['nds_add_user_meta_nonce']) && wp_verify_nonce($_POST['nds_add_user_meta_nonce'], 'nds_add_user_meta_form_nonce')) {
+
+			// sanitize the input
+			$nds_user_meta_key = sanitize_key($_POST['nds']['user_meta_key']);
+			$nds_user_meta_value = sanitize_text_field($_POST['nds']['user_meta_value']);
+			$nds_user =  get_user_by('login',  $_POST['nds']['user_select']);
+			$nds_user_id = absint($nds_user->ID);
+
+			// do the processing
+
+			// add the admin notice
+			$admin_notice = "success";
+
+			// redirect the user to the appropriate page
+			$this->custom_redirect($admin_notice, $_POST);
+			exit;
+		} else {
+			wp_die(__('Invalid nonce specified', $this->plugin_name), __('Error', $this->plugin_name), array(
+				'response' 	=> 403,
+				'back_link' => 'admin.php?page=' . $this->plugin_name,
+
+			));
+		}
+	}
 }
