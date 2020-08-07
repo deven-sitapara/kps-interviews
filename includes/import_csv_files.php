@@ -1,12 +1,4 @@
 <?php
-/* 
-Plugin Name: Import CSV Files 
-Plugin URI: http://www.w3examples.com/wordpress/working_import_csv_files.php
-Description: Import Posts or Pages from CSV Files 
-Author: George Iron
-Version: 1.0 
-Author URI: http://www.w3examples.com
-*/
 
 
 class GIW3ImportCSVFiles
